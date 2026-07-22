@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <h1> Javascript </h1>
+    </header>
+    <body>
+        <!-- munculin teks ke console -->
+        <p> munculkan sesuatu ke console </p>
+        <button onclick="console.log('testing')"> testing </button>
+        <br> 
+        <!-- nambah2 angka setiap button di pencet -->
+        <br>
+        <p> nambah angka: <span id="angka1"> 0 </span></p>
+        <button onclick="tambahSatu()"> tambah 1</button>
+        <script>
+            var spanAngka = Number(document.getElementById("angka1").innerHTML);
+            function tambahSatu(){
+                spanAngka += 1;
+                document.getElementById("angka1").innerHTML = spanAngka;
+            }
+        </script>
+        <br>
+        <!-- ngubah elemen -->
+        <br>
+        <p id="paragraf1">Elemen ini akan diubah</p>
+        <button onclick="ubahElemen()"> coba </button>
+        <button onclick="ubahElemenKesemula()"> kembali ke awal </button>
+        <script>
+            var paragraf = document.getElementById("paragraf1"); // yg ini bakalan ke ubah2
+            var paragrafDefault = document.getElementById("paragraf1").innerHTML;
+            var paragrafUbah = "awuidawoidnawondwo";
+
+            function ubahElemen(){
+                paragraf.innerHTML = paragrafUbah;
+            }
+            function ubahElemenKesemula(){
+                paragraf.innerHTML = paragrafDefault;
+            }
+        </script>
+        <br>
+        <!-- yg ini dengan metode toggle, jadi satu button -->
+        <br>
+        <p id="paragraf2"> Elemen ini bisa diubah </p>
+        <button onclick="ubahElemen2()">ubah</button>
+        <script>
+            var paragraf2 = document.getElementById("paragraf2"); //yg bakalan berubah2
+            var paragrafDefault2 = document.getElementById("paragraf2").innerHTML;
+            var paragrafUbah2 = "aiwdbnaiwbdaiwd";
+            var isDefault = true;
+
+            function ubahElemen2(){
+                if(isDefault){
+                    paragraf2.innerHTML = paragrafUbah2;
+                    isDefault = false;
+                } else {
+                    paragraf2.innerHTML = paragrafDefault2;
+                    isDefault = true;
+                }
+            }
+        </script>
+    </body>
+</html>
