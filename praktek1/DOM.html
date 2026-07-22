@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> ae </title>
+    </head>
+    <header>
+        <h1> Javasricpt </h1>  
+    </header>
+    <body>
+
+        <p id="parag1"> ini adalah p (dengan id) </p>
+        <p id="parag2"> pemasukan: </p>
+        <br>
+        <p class="paragraf"> ini adalah p dengan class, index 0 </p>
+        <p class="paragraf"> pemasukan: </p>
+        <br>
+        <p class="prag"> cara lain </p>
+        <p class="prag"> text 1 </p>
+        <p class="prag"> output:  </p>
+        <br>
+        <p> bagian tag: <span> </span> </p>
+
+        <script>
+            //ambil element via id
+            var paragraf1 = document.getElementById("parag1");
+            var paragraf2 = document.getElementById("parag2");
+
+            document.getElementById("parag2").innerHTML = paragraf2.innerHTML + paragraf1.innerHTML;
+
+            //ambil element via class
+            var paragClass1 = document.getElementsByClassName("paragraf");
+            var paragClass2 = document.getElementsByClassName("paragraf");
+            //tetep berdasarkan index
+            document.getElementsByClassName("paragraf")[1].innerHTML = paragClass1[1].innerHTML + paragClass2[0].innerHTML;
+
+            // cara singkat klo via class satu variable
+            var pragClass = document.getElementsByClassName("prag");
+
+            pragClass[2].innerHTML = pragClass[2].innerHTML + pragClass[0].innerHTML + pragClass[1].innerHTML;   
+            
+            //berdasarkan tag, sama dengan index, tapi bahaya karna ngambil index dari semua tag
+            var spanTag = document.getElementsByTagName("span");
+
+            spanTag[0].innerHTML = "test";
+        </script>
+    </body>
+</html>
